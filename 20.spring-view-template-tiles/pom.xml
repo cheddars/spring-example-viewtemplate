@@ -1,10 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>kr.oddly</groupId>
-  <artifactId>pilot-web-daum</artifactId>
+  <groupId>ex.spring.view</groupId>
+  <artifactId>20.spring-view-template-tiles3</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
+
+  <properties>
+  	<encoding>UTF-8</encoding>
+  	
+  	<!--  dependencies version  -->
+  	<spring.version>3.2.2.RELEASE</spring.version>
+  	<tiles.version>3.0.7</tiles.version>
+  	<tiles.request.version>1.0.6</tiles.request.version>
+  </properties>
+
   <repositories>
 		<repository>
 			<id>springsource-repo</id>
@@ -54,32 +63,32 @@
 	  	<dependency>
 	  		<groupId>org.apache.tiles</groupId>
 	  		<artifactId>tiles-core</artifactId>
-	  		<version>3.0.0</version>
+	  		<version>${tiles.version}</version>
 	  	</dependency>
 	  	<dependency>
 	  		<groupId>org.apache.tiles</groupId>
 	  		<artifactId>tiles-el</artifactId>
-	  		<version>3.0.0</version>
+	  		<version>${tiles.version}</version>
 	  	</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
-			<version>3.0.0</version>
+			<version>${tiles.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-jsp</artifactId>
-			<version>3.0.0</version>
+			<version>${tiles.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-api</artifactId>
-			<version>3.0.0</version>
+			<version>${tiles.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-request-api</artifactId>
-			<version>1.0.0</version>
+			<version>${tiles.request.version}</version>
 		</dependency>	  	
 	  	<dependency>
 	  		<groupId>org.slf4j</groupId>
@@ -123,10 +132,6 @@
   			<version>1.7.2</version>
 		</dependency>		
   </dependencies>
-  <properties>
-  	<spring.version>3.2.2.RELEASE</spring.version>
-  	<encoding>UTF-8</encoding>
-  </properties>
   <build>
 		<plugins>
 			<plugin>
