@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ex.spring.tx.dao.UserActionHistoryDao">
+	<!-- <cache eviction="FIFO" 
+		flushInterval="60000" 
+		size="30" 
+		readOnly="true" /> -->
+	
+	<insert id="writeHistory">
+		INSERT INTO user_action_history (
+			user_seq, action_type, action_desc, action_dt
+		) values (
+			#{user_seq}, #{action_type}, #{action_desc}, now()
+		)
+	</insert>
+		
+</mapper>

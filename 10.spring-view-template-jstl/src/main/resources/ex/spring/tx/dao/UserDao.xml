@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ex.spring.tx.dao.UserDao">
+	<!-- <cache eviction="FIFO" 
+		flushInterval="60000" 
+		size="30" 
+		readOnly="true" /> -->
+	
+	<select id="getUser" resultType="ex.spring.tx.model.User">
+		SELECT * 
+		FROM users 
+		where seq = #{seq}
+	</select>
+		
+	<update id="updateUser" parameterType="ex.spring.tx.model.User">
+		UPDATE users 
+		SET id = #{id}, 
+			pwd = #{pwd} , 
+			name = #{name} , 
+			email = #{email} , 
+			point = #{point}
+		WHERE seq = #{seq}
+	</update>
+
+	<insert id="writeUser" parameterType="ex.spring.tx.model.User">
+		INSERT INTO users (
+			id, pwd, name, email, point
+		) values (
+			#{id}, #{pwd}, #{name}, #{email}, #{point}
+		)
+	</insert>
+
+</mapper>

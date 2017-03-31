@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="openapi-graph" extends="page">
+		<put-attribute name="content" value="/WEB-INF/views/openapi/graph.jsp" />
+	</definition>
+	
+	<definition name="openapi-graph-traffic" extends="page">
+		<put-attribute name="content" value="/WEB-INF/views/openapi/traffic.jsp" />
+	</definition>
+		
+	<definition name="openapi-graph-hitratio" extends="page">
+		<put-attribute name="content" value="/WEB-INF/views/openapi/hitratio.jsp" />
+	</definition>
+</tiles-definitions>

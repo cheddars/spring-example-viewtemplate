@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ex.spring.tx.dao.ArticleDao">
+	<!-- <cache eviction="FIFO" 
+		flushInterval="60000" 
+		size="30" 
+		readOnly="true" /> -->
+	
+	<insert id="write" parameterType="ex.spring.tx.model.Article">
+		INSERT INTO article (
+			board_seq, 
+			title, 
+			content, 
+			user_seq, 
+			reg_dt
+		) values (
+			#{board_seq}, 
+			#{title}, 
+			#{content}, 
+			#{user_seq}, 
+			#{reg_dt}
+		)
+	</insert>
+		
+	<select id="list" resultType="ex.spring.tx.model.Article">
+		SELECT * FROM article
+	</select>
+
+	<select id="view" parameterType="string" resultType="ex.spring.tx.model.Article">
+		SELECT * 
+		FROM article 
+		where seq = CAST(#{seq} AS int)
+	</select>
+
+	<delete id="deleteAll">
+		DELETE FROM article
+	</delete>
+</mapper>
